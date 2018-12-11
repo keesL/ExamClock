@@ -55,5 +55,6 @@ class clock:
 		self.root.mainloop()
 
 if __name__ == "__main__":
-	countdown=(50*60, 25*60)
+	duration = datetime(2018, 12, 11, 20, 30, 00)-datetime.now()
+	countdown=(duration.seconds, 30*60)
 	clock(countdown)
