@@ -2,6 +2,7 @@
 from Tkinter import *
 from time import localtime,strftime
 from datetime import datetime,timedelta
+import math
 
 class clock:
 
@@ -23,7 +24,7 @@ class clock:
 		else:
 			delta = self.target - datetime.now()
 			if delta.seconds < self.show:
-				t = delta.seconds / 60
+				t = int(math.ceil(delta.seconds / 60.0))
 				if t == 1:
 					word = " minute "
 				else:
@@ -55,6 +56,6 @@ class clock:
 		self.root.mainloop()
 
 if __name__ == "__main__":
-	duration = datetime(2018, 12, 11, 20, 30, 00)-datetime.now()
+	duration = datetime(2019, 2, 18, 11, 51, 00)-datetime.now()
 	countdown=(duration.seconds, 30*60)
 	clock(countdown)
